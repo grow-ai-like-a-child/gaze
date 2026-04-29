@@ -6,9 +6,9 @@
   <!-- Meta tags for social media banners, these should be filled in appropriately as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="In a task involving inference of human gaze direction, our controlled study reveals a substantial performance gap between top-tier Vision-Language Models (VLMs) and humans, as well as behavioral patterns in VLMs' response that suggest they are not simply guessing.">
-  <meta property="og:title" content="Can Vision Language Models Infer Human Gaze Direction? A Controlled Study"/>
+  <meta property="og:title" content="Vision-Language Models Mistake Head Orientation for Gaze Direction: Nonverbal Conversation Cues"/>
   <meta property="og:description" content="In a task involving inference of human gaze direction, our controlled study reveals a substantial performance gap between top-tier Vision-Language Models (VLMs) and humans, as well as behavioral patterns in VLMs' response that suggest they are not simply guessing."> 
-  <meta property="og:url" content="https://grow-ai-like-a-child.github.io/VLMgaze/"/>
+  <meta property="og:url" content="https://zoryzhang.github.io/gaze/"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X630-->
   <meta property="og:image" content="static/images/teaser_v2.jpg"/>
   <meta property="og:image:width" content="1661"/>
@@ -21,12 +21,12 @@
   <meta name="twitter:card" content="static/images/teaser_v2.jpg">
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="Vision-Language Models, Gaze Inference, Human Vision, Spatial Reasoning, AI Evaluation">
-  <meta name="author" content="Zory Zhang, Pinyuan Feng, Bingyang Wang, Tianwei Zhao, Suyang Yu, Qingying Gao, Hokin Deng, Ziqiao Ma, Yijiang Li, Dezhi Luo (GrowAI Team)">
+  <meta name="author" content="Zory Zhang, Pinyuan Feng, Bingyang Wang, Tianwei Zhao, Suyang Yu, Qingying Gao, Hokin Deng, Ziqiao Ma, Yijiang Li, Dezhi Luo">
   <meta name="robots" content="index, follow">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Can Vision Language Models Infer Human Gaze Direction? A Controlled Study</title>
+  <title>Vision-Language Models Mistake Head Orientation for Gaze Direction: Nonverbal Conversation Cues</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👁️</text></svg>">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -119,9 +119,9 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-              <h1 class="title is-1 publication-title">👁️ Can Vision Language Models Infer Human Gaze Direction? A Controlled Study</h1>
+              <h1 class="title is-1 publication-title">👁️ Vision-Language Models Mistake Head Orientation for Gaze Direction: Nonverbal Conversation Cues</h1>
             </div>
-            <h4 class="title is-size-4 publication-title">Manuscript under review</h4>
+            <h4 class="title is-size-4 publication-title">Accepted as ACL 2026 Findings</h4>
             
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
@@ -170,10 +170,6 @@
                 <sup>8</sup>UC San Diego
               </span>
               <span class="eql-cntrb"><small><br><sup>†</sup>Co-leading, <sup>*</sup>Co-advising</small></span>
-              <br>
-              <span class="author-block" style="color: #4a4a4a; margin-top: 10px;">
-                <img src="static/images/growai.png" alt="GrowAI Team Logo" style="max-height: 100px; margin-top: 10px;"><br><strong>GrowAI Team</strong> | <a href="https://growing-ai-like-a-child.github.io/" target="_blank" style="color: #3273dc;">growing-ai-like-a-child.github.io</a>
-              </span>
             </div>
 
             <div class="column has-text-centered">
@@ -188,7 +184,6 @@
                   <span>Paper</span>
                 </a>
               </span>
-
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/2506.05412" target="_blank"
@@ -199,21 +194,35 @@
                   <span>arXiv</span>
                 </a>
               </span>
+              
+                    <!-- PDF link -->
+                <span class="link-block">
+                  <a href="https://osf.io/v8kdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-preregistered"></i>
+                  </span>
+                  <span>OSF Preregistration</span>
+                </a>
+              </span>
+              
+              <br><br>
+              
 
                   <!-- Stimuli link -->
                   <span class="link-block">
-                    <a href="https://osf.io/kyaeu" target="_blank"
+                    <a href="https://huggingface.co/datasets/Zory/gaze-referent-stimuli" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="fa-solid fa-images"></i>
                     </span>
-                    <span>Stimuli</span>
+                    <span>Stimuli@HuggingFace</span>
                   </a>
                 </span>
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/grow-ai-like-a-child/referential-gaze" target="_blank"
+                    <a href="https://github.com/zoryzhang/referential-gaze" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -573,9 +582,6 @@
   <div class="columns is-centered">
     <div class="column is-8">
       <div class="content">
-        <p class="has-text-centered">
-            <img src="static/images/growai.png" alt="GrowAI Team Logo" style="max-height: 200px; margin-top: 10px;"><br><strong>GrowAI Team</strong> | <a href="https://growing-ai-like-a-child.github.io/" target="_blank" style="color: #3273dc;">growing-ai-like-a-child.github.io</a>
-        </p>
         <p style="font-size: 0.9rem;">
           This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
           You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
