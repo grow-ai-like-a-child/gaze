@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriately as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="In a task involving inference of human gaze direction, our controlled study reveals a substantial performance gap between top-tier Vision-Language Models (VLMs) and humans, as well as behavioral patterns in VLMs' response that suggest they are not simply guessing.">
+  <meta name="description" content="Vision-Language Models are bad at knowing where someone looks, primarily because they are using the wrong cue. Instead of utilizing eye appearance, they use head orientation as a shortcut to find gaze target.">
   <meta property="og:title" content="Vision-Language Models Mistake Head Orientation for Gaze Direction: Nonverbal Conversation Cues"/>
-  <meta property="og:description" content="In a task involving inference of human gaze direction, our controlled study reveals a substantial performance gap between top-tier Vision-Language Models (VLMs) and humans, as well as behavioral patterns in VLMs' response that suggest they are not simply guessing."> 
+  <meta property="og:description" content="Vision-Language Models are bad at knowing where someone looks, primarily because they are using the wrong cue. Instead of utilizing eye appearance, they use head orientation as a shortcut to find gaze target."> 
   <meta property="og:url" content="https://zoryzhang.github.io/gaze/"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X630-->
   <meta property="og:image" content="static/images/teaser_v2.jpg"/>
@@ -121,7 +121,7 @@
             <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
               <h1 class="title is-1 publication-title">👁️ Vision-Language Models Mistake Head Orientation for Gaze Direction: Nonverbal Conversation Cues</h1>
             </div>
-            <h4 class="title is-size-4 publication-title">Accepted as ACL 2026 Findings</h4>
+            <h4 class="title is-size-4 publication-title">Accepted by ACL 2026</h4>
             
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
@@ -243,7 +243,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
-        <strong>TL;DR:</strong> In a task involving inference of human gaze direction, our controlled study reveals a substantial performance gap between top-tier Vision-Language Models (VLMs) and humans, as well as behavioral patterns in VLMs' responses that suggest they are not simply guessing.
+        <strong>TL;DR:</strong> Vision-Language Models are bad at knowing where someone looks, primarily because they are using the wrong cue. Instead of utilizing eye appearance, they use head orientation as a shortcut to find gaze target.
       </h2>
       
       <video poster="" id="tree" autoplay controls muted loop width="100%">
@@ -263,10 +263,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Gaze-referential inference—the ability to infer what others are looking at—is a critical component of a theory of mind that underpins natural human-AI interaction. In a controlled study, we evaluated this skill across 111 Vision Language Models (VLMs) using photos taken with manipulated difficulty and variability, comparing performance with that of human participants (N = 65), and analyzed behaviors using mixed-effects models.
+            Where someone looks is a nonverbal communication cue that children and adults readily use. How well can Vision-Language Models (VLMs) infer gaze targets? To construct evaluation stimuli, we captured 1,360 real-world photos of scenes in which a person gazes at one of several objects on a table. Importantly, we also controlled the gazer's head orientation: sometimes it was directed toward the gaze target, sometimes toward a distractor object, and sometimes left unconstrained. 
           </p>
           <p>
-            <strong>We found that 94 of the 111 VLMs failed to do better than random guessing</strong>, while humans achieved near-ceiling accuracy. VLMs even respond with each choice almost equally frequently. Are they randomly guessing? Although most VLMs struggle, when we zoom in on five of the top-tier VLMs with above-chance performance, we find that their performance declined with increasing task difficulty but varied only slightly across different prompts and scene objects. <strong>These behavioral patterns cannot be explained by considering them as random guessers.</strong> Instead, they likely use a combination of heuristics and guessing such that their performance is subject to the task difficulty but robust to perceptual variations. This suggests that VLMs, lacking gaze inference capability, have yet to become technologies that can naturally interact with humans, but the potential remains.
+            We found a <strong>substantial performance gap between VLMs and humans</strong>, ruled out alternative explanations such as resolution and object-naming skills, and identified the main reason for the gap as VLMs inferring gaze direction using head orientation rather than eye appearance. Such a bias is likely due to data rather than architecture, as suggested by a proof-of-concept experiment finetuning a transformer-based vision model. Future work should investigate whether these findings hold broadly across various deep learning methods trained on existing data, and whether better data mitigates this problem for all architectures. Pinpointing the reason sets the stage for technologies that can interpret gaze targets to have more efficient interactions with humans.
           </p>
         </div>
       </div>
@@ -275,108 +275,69 @@
 </section>
 <!-- End paper abstract -->
 
-<!-- Key Findings Section -->
-<section class="hero is-small">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered" style="margin-top: 2rem;">🔍 Key Findings</h2>
-        
-        <div class="columns is-multiline">
-          <div class="column is-half">
-            <div class="box" style="height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-              <h3 class="title is-4" style="color: white;">
-                <i class="fas fa-chart-line"></i> Massive Performance Gap
-              </h3>
-              <p><strong style="color: white;">94 of 111 VLMs</strong> performed no better than random guessing (~42%), while humans achieved ~91% accuracy. VLMs responded with every possible option <strong style="color: white;">almost equally often</strong>. Even top-tier VLMs like GPT-4o only reached ~50% accuracy. Are they simply guessing randomly?</p>
-            </div>
-          </div>
-          
-          <div class="column is-half">
-            <div class="box" style="height: 100%; background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
-              <h3 class="title is-4">
-                <i class="fas fa-exclamation-triangle"></i> Scaling Limitations
-              </h3>
-              <p>VLM size and release date show minimal correlation with performance (both R² < 0.03), suggesting <strong>fundamental architectural limitations rather than scale issues</strong>. The pattern of errors they made is also quite different from that of humans and does not become more similar as VLMs get bigger (R² < 0.1).</p>
-            </div>
-          </div>
-          
-          <div class="column is-half">
-            <div class="box" style="height: 100%; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
-              <h3 class="title is-4">
-                <i class="fas fa-eye"></i> Task Difficulty Effects
-              </h3>
-              <p>The performance of the 5 top-tier VLMs (baseline-corrected) degrades significantly with increasing proximity between objects and number of objects, but surprisingly shows no view angle effects (while humans do,  p<0.001). In general, this means <strong>their performance becomes closer to random guessing as difficulty increases.</strong></p>
-            </div>
-          </div>
-          
-          <div class="column is-half">
-            <div class="box" style="height: 100%; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-              <h3 class="title is-4">
-                <i class="fas fa-brain"></i> Not Random Guessing
-              </h3>
-              <p>Task Difficulty Effects suggest meaningful computation rather than random responses. Top-tier VLMs likely employ heuristics (or approximations) that work to some extent for easier cases but break down under challenging conditions, an indication of <strong>partial understanding of gaze direction and spatial relationships.</strong></p>
-            </div>
-          </div>
+<!-- Thread highlights -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-multiline is-variable is-4">
+      <div class="column is-two-fifths">
+        <div class="box has-text-centered">
+          <a href="static/images/task.png" target="_blank" rel="noopener noreferrer">
+            <img src="static/images/task.png" alt="Task setup for gaze referent inference" style="max-height: 420px; width: 100%; object-fit: contain;"/>
+          </a>
+          <p class="subtitle" style="font-size: 1rem; margin-top: 10px; margin-bottom: 0;">
+            We controlled the gazer's head orientation: sometimes it was directed toward the gaze target, sometimes toward a distractor object, and sometimes left unconstrained.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-three-fifths">
+        <div class="box has-text-centered">
+          <a href="static/images/stimuli_v4.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="static/images/stimuli_v4.jpg" alt="Example controlled stimuli with objects on a table" style="max-height: 420px; width: 100%; object-fit: contain;"/>
+          </a>
+          <p class="subtitle" style="font-size: 1rem; margin-top: 10px; margin-bottom: 0;">
+            Other controlled variables. We learned that VLMs are using heuristics that break down when objects are closer or with more objects, but not when it is a side view. Side views are harder for humans but not VLMs because VLMs are mostly using head orientation, still detectable in side views.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="box has-text-centered">
+          <a href="static/images/accuracy.png" target="_blank" rel="noopener noreferrer">
+            <img src="static/images/accuracy.png" alt="Accuracy comparison for related methods and variants" style="max-height: 420px; width: 100%; object-fit: contain;"/>
+          </a>
+          <p class="subtitle" style="font-size: 1rem; margin-top: 10px; margin-bottom: 0;">
+            We tested 111 VLMs and 65 humans and found a substantial performance gap: o1 accuracy=50%, human accuracy=89%. Larger or newer VLMs are not better.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="box has-text-centered">
+          <a href="static/images/space.png" target="_blank" rel="noopener noreferrer">
+            <img src="static/images/space.png" alt="Analysis showing head orientation predicts VLM choices" style="max-height: 420px; width: 100%; object-fit: contain;"/>
+          </a>
+          <p class="subtitle" style="font-size: 1rem; margin-top: 10px; margin-bottom: 0;">
+            𝐖𝐡𝐲 𝐝𝐢𝐝 𝐭𝐡𝐞𝐲 𝐟𝐚𝐢𝐥? We individually diagnosed 4 strong VLMs (and other baselines). Compared with alternative explanations such as resolution and object-naming skills, the strongest explanatory factor is the head orientation bias.
+          </p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="box has-text-centered">
+          <a href="static/images/finetune.png" target="_blank" rel="noopener noreferrer">
+            <img src="static/images/finetune.png" alt="Fine-tuning result reducing head-orientation bias" style="max-height: 420px; width: 100%; object-fit: contain;"/>
+          </a>
+          <p class="subtitle" style="font-size: 1rem; margin-top: 10px; margin-bottom: 0;">
+            𝐖𝐡𝐲 𝐝𝐨 𝐕𝐋𝐌𝐬 𝐬𝐡𝐨𝐰 𝐡𝐞𝐚𝐝 𝐨𝐫𝐢𝐞𝐧𝐭𝐚𝐭𝐢𝐨𝐧 𝐛𝐢𝐚𝐬? We think it is due to the data, not architecture. Fine-tuning GazeLLE on our stimulus set (where there are more instances requiring fine-grained processing of eye details beyond head orientation) greatly improves its performance in cases where head orientation does not align with gaze direction. It serves as a proof-of-concept experiment showing that head orientation bias can be mitigated. The recommendation is targeted training data where gaze cues must be used to get the correct answer, but not shortcuts like context cue or head/body orientation.
+
+          </p>
         </div>
       </div>
     </div>
-  </section>
-
-<!-- Stimuli carousel -->
-<section class="hero is-small">
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered" style="margin-top: 2rem;">Controlled Study & Stimuli Examples</h2>
-        
-        <div id="stimuli-carousel" class="carousel results-carousel">
-            <div class="item">
-                <img src="static/images/stimuli/stimuli_v4.jpg"/>
-                <h3 class="subtitle has-text-centered">
-                    <div style="font-size: 1rem; margin-top: 10px;">
-                        Systematic manipulation of controlled variables: View (left/right/front), Proximity (1-3 scale), #Objects (2-4), Objects (18 combinations of 9 items), and Gazer (2 actors) across 900 test stimuli. The gazer here is Actor X.
-                    </div>
-            </div>
-            <div class="item">
-                <img src="static/images/stimuli/stimuli_y_v2.jpg"/>
-                <h3 class="subtitle has-text-centered">
-                    <div style="font-size: 1rem; margin-top: 10px;">
-                        The gazer is Actor Y.
-                    </div>
-            </div>
-            <div class="item">
-                <img src="static/images/stimuli/gaze_36.png"  style="max-height: 300px"/>
-                <h3 class="subtitle has-text-centered">
-                    <div style="font-size: 1rem; margin-top: 10px;">
-                        Messy backgrounds mainly appear when View=right, yet we do not observe significantly worse performance in the View=right condition, so such a background introduces minimal confounding effect while adds realistic noise to the stimuli and increases diversity.
-                    </div>
-            </div>
-            <div class="item">
-                <img src="static/images/stimuli/gaze_138.png"/>
-            </div>
-            <div class="item">
-                <img src="static/images/stimuli/gaze_402.png"/>
-            </div>
-            <div class="item">
-                <img src="static/images/stimuli/gaze_550.png"/>
-            </div>
-            <div class="item">
-                <img src="static/images/stimuli/gaze_683.png"/>
-            </div>
-            <div class="item">
-                <img src="static/images/stimuli/gaze_785.png"/>
-            </div>
-            <div class="item">
-                <img src="static/images/stimuli/gaze_871.png"/>
-            </div>
-            <div class="item">
-                <img src="static/images/stimuli/gaze_904.png"/>
-            </div>
-        </div>
-        </div>
-    </div>
-    </section>
-<!-- End Stimuli carousel -->
-
+  </div>
+</section>
+<!-- End thread highlights -->
 
 <!-- Survey carousel -->
 <section class="hero is-small">
@@ -416,157 +377,13 @@
 </section>
 <!-- End Survey carousel -->
 
-<!-- Results Section -->
-<section class="section">
-<div class="container is-max-desktop">
-  <h2 class="title is-3 has-text-centered">📊 Analyses</h2>
-  <div class="content has-text-justified">
-    
-    <h3 class="title is-4">Analysis A: Overall Performance Comparison</h3>
-    
-    <div class="box" style="padding: 2rem; margin: 2rem 0;">
-      <div class="columns is-multiline">
-        <div class="column is-one-third has-text-centered">
-          <div class="has-text-weight-bold is-size-1" style="color: #f39c12;">~42%</div>
-          <div class="has-text-weight-semibold">Random-Guessing Baseline</div>
-          <div class="is-size-7 has-text-grey">(Expected chance performance)</div>
-        </div>
-        <div class="column is-one-third has-text-centered">
-          <div class="has-text-weight-bold is-size-1" style="color: #e74c3c;">94/111</div>
-          <div class="has-text-weight-semibold">VLMs at Chance Level</div>
-          <div class="is-size-7 has-text-grey">(Failed statistical significance test)</div>
-        </div>
-        <div class="column is-one-third has-text-centered">
-          <div class="has-text-weight-bold is-size-1" style="color: #27ae60;">~91%</div>
-          <div class="has-text-weight-semibold">Human Performance</div>
-          <div class="is-size-7 has-text-grey">(Near-ceiling accuracy)</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns">
-      <div class="column is-three-fifths">
-        <div class="box">
-          <h4 class="title is-5">🔍 Confusion Matrix Analysis</h4>
-          <div style="text-align: center; margin-bottom: 1rem;">
-            <img src="static/images/confusion_matrix_v5.jpg" alt="Confusion matrices comparison" style="max-width: 100%; height: auto;">
-          </div>
-          <p>Humans show strong diagonal patterns indicating consistent correct responses, while VLMs produce nearly uniform distributions across all choices—<strong>a pattern consistent with a random-guessing account</strong> that led to our initial speculation—are they guessing?</p>
-        </div>
-      </div>
-      <div class="column is-two-fifths">
-        <div class="box">
-          <h4 class="title is-5">📈 Scaling Analysis</h4>
-          <div style="text-align: center; margin-bottom: 1rem;">
-            <img src="static/images/ranking_size.png" style="max-width: 100%; height: auto;">
-          </div>
-          <p>VLM size (and release date) show minimal correlation with accuracy (both R² < 0.03), suggesting <strong>core architectural limitations</strong>.</p>
-        </div>
-      </div>
-    </div>
-
-    <h3 class="title is-4">Analysis B: Behavioral Patterns in Top-Tier VLMs and Humans</h3>
-    
-    <p>We conducted a pre-registered study focusing on five top-performing VLMs (GPT-4o, Gemini 1.5 Pro, InternLM-XComposer2-vl-7b, Qwen2.5-VL-72B-Instruct, and GLM-4V-9B) and humans to understand their behavioral patterns using mixed-effects logistic regression models. To correct for baseline due to the varying number of choices, we examine not the accuracy but <strong>the ratio between the odds of accuracy and the chance baseline</strong>. We found that performance moves closer to baseline as difficulty increases. The hypothesis that heuristics used in easier cases break down for harder cases stems from this degradation pattern.</p>
-    <h3 class="subtitle has-text-centered">
-        <img src="static/images/effects.png" style="max-width: 100%; height: auto; margin-top: 1rem;">
-        <div style="font-size: 1rem; margin-top: 10px;">
-            The estimated marginal means. The random-guessing baseline is indicated by dashed lines.
-        </div>
-    </h3>
-    
-    <div class="columns is-multiline">
-      <div class="column is-half">
-        <div class="box">
-          <h4 class="title is-5">📐 Proximity Effect</h4>
-          <p><strong>Significant for 4/5 VLMs and humans:</strong> Baseline-correct performance degrades as objects get closer together (p < 0.05 for Gemini, GPT-4o, GLM-4V, InternLM; p = 0.15 for Qwen).</p>
-        </div>
-      </div>
-      
-      <div class="column is-half">
-        <div class="box">
-          <h4 class="title is-5">🎯 Choice Effect</h4>
-          <p><strong>Significant for all 5 VLMs and humans:</strong> Baseline-correct performance drops dramatically (p < 0.001) as the number of candidate objects increases from 2 to 3 and 4. Effect sizes ranging from -0.165 to -0.285.</p>
-        </div>
-      </div>
-      
-      <div class="column is-half">
-        <div class="box">
-          <h4 class="title is-5">👁️ View Effect</h4>
-          <p>Human baseline-correct performance degrades when viewing the gazer's side profile (p < 0.001), whereas VLMs show no significant effect.</p>
-          <div style="background: #fff2e8; padding: 1rem; border-radius: 5px; margin-top: 1rem;">
-            <strong>Key Insight:</strong> VLM may rely on head orientation rather than eye gaze direction, making them less sensitive to side-views that increase eye direction geometric ambiguity and hinder counterfactual reasoning in human observers (who show View effect).
-          </div>
-        </div>
-      </div>
-      
-      <div class="column is-half">
-        <div class="box">
-          <h4 class="title is-5">🔄 Sensitivity Analysis</h4>
-          <p>While the number of levels for gazers (2) is too small to conclude sensitivity, there is minimal variance across prompts (small) and object combinations (almost zero).</p>
-          <div style="background: #e8f8e8; padding: 1rem; border-radius: 5px; margin-top: 1rem;">
-            <strong>Implication:</strong> The inference VLMs have not only depends on the task difficulty but is also robust to surface-level perceptual variations, like object visual features and background distractors, suggesting a meaningful computation rather than random guessing.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- Implications Section -->
-<section class="section hero is-light">
-<div class="container is-max-desktop">
-  <h2 class="title is-3 has-text-centered">💡 Implications & Future Work</h2>
-  
-  <div class="columns is-multiline">
-    <div class="column is-half">
-      <div class="box" style="border-left: 4px solid #e74c3c;">
-        <h3 class="title is-4">
-          <i class="fas fa-exclamation-triangle" style="color: #ff6b6b;"></i> Implications for AI Development
-        </h3>
-        <ul>
-          <li><strong>1. Gaze Inference Deficits:</strong> The problem might lies at not picking up eye gaze for inferring looking directions.</li>
-          <li><strong>2. Theory of Mind and Human-AI Interaction:</strong> VLMs lack fundamental gaze inference abilities that bootstrap human social cognition, and they are not yet ready for natural collaboration requiring social understanding.</li>
-          <li><strong>3. Beyond Scaling:</strong> Current paradigms may be insufficient—more parameters won't solve this gap.</li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="column is-half">
-      <div class="box" style="border-left: 4px solid #9b59b6;">
-        <h3 class="title is-4">
-          <i class="fas fa-question-circle" style="color: #9b59b6;"></i> Open Questions
-        </h3>
-        <ul>
-          <li><strong>1. What is the mechanism of approximation</strong> in top-tier VLMs, and <strong>how does it emerge from the data?</strong></li>
-          <li><strong>2. What roles do VLMs attach to gaze</strong> (e.g., the referential nature of gaze, using gaze to resolve conversational referent ambiguity)?</li>
-          <li>3. To have AI that learns like humans and acquires Theory of Mind from naturalistic data, <strong>will a curriculum that encourages early development of gaze-referential understanding be helpful?</strong></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="column is-full">
-      <div class="box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-        <h3 class="title is-4" style="color: white;">
-          <i class="fas fa-microscope"></i> Methodological Contribution
-        </h3>
-        <p style="font-size: 1.1rem;">
-          This work uses gaze as a proxy to demonstrate how controlled studies can help us investigate behavioral patterns behind benchmark scores (that would have marked them as random guessers) and reductionism (“approximate retrievers”), constrain hypotheses (they are unlikely to be just guessing), and provide new hypothesis (that they might primarily use head directions but not eye directions) that is subject to further mechanistic investigations.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
 <!--BibTex citation -->
 <section class="section" id="BibTeX">
 <div class="container is-max-desktop content">
-<h2 class="title">BibTeX</h2><pre><code>@article{vlmGaze2025,
-  title={Can Vision Language Models Infer Human Gaze Direction? A Controlled Study},
+<h2 class="title">BibTeX</h2><pre><code>@article{vlmGaze2026,
+  title={Vision-Language Models Mistake Head Orientation for Gaze Direction: Nonverbal Conversation Cues},
   author={Zhang, Zory and Feng, Pinyuan and Wang, Bingyang and Zhao, Tianwei and Yu, Suyang and Gao, Qingying and Deng, Hokin and Ma, Ziqiao and Li, Yijiang and Luo, Dezhi},
-  year={2025},
+  year={2026},
   eprint={2506.05412},
   archivePrefix={arXiv},
   primaryClass={cs.CV},
